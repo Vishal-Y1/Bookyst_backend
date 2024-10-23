@@ -10,8 +10,11 @@ const BookSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    oldprice: {
+      type: Number,
+    },
     price: {
-      type: String,
+      type: Number,
       required: true,
     },
     ratings: {
@@ -23,6 +26,10 @@ const BookSchema = new mongoose.Schema(
     },
     genre: {
       type: Array,
+      required: true,
+    },
+    trending: {
+      type: Boolean,
       required: true,
     },
     author: {
@@ -51,6 +58,9 @@ const BookSchema = new mongoose.Schema(
     stock: {
       type: Boolean,
       // required: true
+    },
+    paperBook: {
+      type: Boolean,
     },
   },
   { timestamps: true }

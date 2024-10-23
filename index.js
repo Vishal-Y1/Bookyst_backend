@@ -30,7 +30,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/books", bookRoutes);
 
 app.get("/", (req, res) => {
-  res.send("Book store server is running");
+  res.send("Book store server is running successfully");
 });
 
 app.listen(process.env.PORT, () => {
