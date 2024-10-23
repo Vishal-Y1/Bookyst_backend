@@ -34,6 +34,7 @@ const signIn = async (req, res) => {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
         sameSite: "none",
+        domain: ".vercel.app",
       })
       .json({ ...others, token });
     console.log("cookie from auth controller: ", req.cookies.access_token);
