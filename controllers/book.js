@@ -3,11 +3,12 @@ const User = require("../models/User");
 
 // ADD A BOOK
 const addBook = async (req, res) => {
-  const isAdmin = await User.findById(req.user.id);
+  const { isAdmin } = await User.findById(req.user.id);
   const newBook = new Book({ ...req.body });
+  console.log("check form book controller", isAdmin);
 
   try {
-    if (isAdmin.isAdmin) {
+    if (isAdmin) {
       try {
         const savedBook = await newBook.save();
         res.status(201).json({ savedBook });
