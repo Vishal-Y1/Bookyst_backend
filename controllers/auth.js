@@ -33,7 +33,7 @@ const signIn = async (req, res) => {
       .cookie("access_token", token, {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
-        sameSite: "lax",
+        sameSite: "none",
       })
       .json({ ...others, token });
     console.log("cookie from auth controller: ", req.cookies.access_token);
