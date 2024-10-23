@@ -22,7 +22,7 @@ const BookSchema = new mongoose.Schema(
     },
     image: {
       type: String,
-      required: true,
+      // required: true,
     },
     genre: {
       type: Array,
@@ -30,7 +30,7 @@ const BookSchema = new mongoose.Schema(
     },
     trending: {
       type: Boolean,
-      required: true,
+      // required: true,
     },
     author: {
       type: String,

@@ -30,14 +30,14 @@ const signIn = async (req, res) => {
 
     res
       .status(200)
-      .cookie("access_token", token, {
+      .cookie("token", token, {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
         maxAge: 7 * 24 * 60 * 60 * 1000,
         sameSite: "none",
       })
       .json({ ...others, token });
-    console.log("cookie from auth controller: ", req.cookies.access_token);
+    console.log("cookie from auth controller: ", req.cookies.token);
     console.log("auth token: ", token);
   } catch (error) {
     res.status(400).json(error);
