@@ -34,6 +34,7 @@ const signIn = async (req, res) => {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
         maxAge: 7 * 24 * 60 * 60 * 1000,
+        sameSite: "none",
       })
       .json({ ...others, token });
     console.log("cookie from auth controller: ", req.cookies.access_token);
